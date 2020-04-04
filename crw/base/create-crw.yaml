@@ -1,0 +1,40 @@
+---
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/description: "CRW"
+    openshift.io/display-name: "CRW"
+    argocd.argoproj.io/sync-wave: "0"
+  name: crw
+spec:
+  finalizers:
+  - kubernetes
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    olm.providedAPIs: CheCluster.v1.org.eclipse.che
+    argocd.argoproj.io/sync-wave: "2"
+  name: crw-opg
+  namespace: crw
+spec:
+  targetNamespaces:
+  - crw
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: codeready-workspaces
+  namespace: crw
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+spec:
+  channel: latest
+  installPlanApproval: Automatic
+  name: codeready-workspaces
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: crwoperator.v2.0.0
+
