@@ -1,0 +1,3 @@
+resources:
+- org_v1_che_cr.yaml
+- create-crw.yaml
