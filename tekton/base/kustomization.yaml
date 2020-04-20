@@ -1,0 +1,4 @@
+resources:
+- create-tekton.yaml
+patchesStrategicMerge:
+- olm-provided-apis.yaml
