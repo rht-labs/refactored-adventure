@@ -1,4 +1,5 @@
 resources:
+- operator-group.yaml
 - create-tekton.yaml
 patchesStrategicMerge:
 - olm-provided-apis.yaml
