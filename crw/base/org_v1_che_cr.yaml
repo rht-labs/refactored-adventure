@@ -27,7 +27,7 @@ spec:
     # set default image pull policy
     cheImagePullPolicy: 'Always'
     # image:tag used in Devfile registry deployment
-    devfileRegistryImage: ''
+    devfileRegistryImage: 'quay.io/rht-labs/che-devfile-registry:7.9.3-labs'
     # image:tag used in plugin registry deployment
     pluginRegistryImage: ''
     # defaults to `che`. When set to `codeready`, CodeReady Workspaces is deployed
@@ -39,6 +39,11 @@ spec:
     # when set to true the operator will attempt to get a secret in OpenShift router namespace
     # to add it to Java trust store of Che server. Requires cluster-admin privileges for operator service account
     selfSignedCert: false
+    # Name of the config-map with public certificates to add to Java trust store of the Che server.
+    serverTrustStoreConfigMapName: ''
+    # If enabled then the certificate from `che-git-self-signed-cert` config map
+    # will be propagated to the Che components and provide particular configuration for Git.
+    gitSelfSignedCert: false
     # TLS mode for Che. Make sure you either have public cert, or set selfSignedCert to true
     tlsSupport: true
     # protocol+hostname of a proxy server. Automatically added as JAVA_OPTS and https(s)_proxy
@@ -60,8 +65,8 @@ spec:
       CHE_WORKSPACE_SIDECAR_IMAGE__PULL__POLICY: 'Always'
       CHE_DOCKER_ALWAYS__PULL__IMAGE: 'true'
       CHE_WORKSPACE_DEFAULT__MEMORY__LIMIT__MB: '3072'
-      CHE_LIMITS_USER_WORKSPACES_COUNT: '2'
-      CHE_LIMITS_USER_WORKSPACES_RUN_COUNT: '1'
+      CHE_LIMITS_USER_WORKSPACES_COUNT: '4'
+      CHE_LIMITS_USER_WORKSPACES_RUN_COUNT: '2'
       CHE_LIMITS_WORKSPACE_IDLE_TIMEOUT: '-1'
   database:
     # when set to true, the operator skips deploying Postgres, and passes connection details of existing DB to Che server
@@ -116,6 +121,6 @@ spec:
     oAuthSecret: ''
     # image:tag used in Keycloak deployment
     identityProviderImage: ''
-
-
-
+  metrics:
+    # Enables '/metrics' endpoint of Che server.
+    enable: true
