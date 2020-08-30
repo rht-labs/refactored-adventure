@@ -1,2 +1,4 @@
+namespace: openshift-operators
+
 resources:
 - create-tekton.yaml
