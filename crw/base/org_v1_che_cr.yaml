@@ -14,7 +14,7 @@ apiVersion: org.eclipse.che/v1
 kind: CheCluster
 metadata:
   name: codeready-workspaces
-  namespace: crw
+  namespace: openshift-workspaces
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
     argocd.argoproj.io/sync-options: Prune=false  
