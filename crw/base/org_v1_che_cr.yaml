@@ -27,7 +27,7 @@ spec:
     # set default image pull policy
     cheImagePullPolicy: 'Always'
     # image:tag used in Devfile registry deployment
-    devfileRegistryImage: 'quay.io/rht-labs/che-devfile-registry:7.9.3-labs'
+    devfileRegistryImage: 'quay.io/rht-labs/che-devfile-registry:7.21.0-labs'
     # image:tag used in plugin registry deployment
     pluginRegistryImage: ''
     # defaults to `che`. When set to `codeready`, CodeReady Workspaces is deployed
