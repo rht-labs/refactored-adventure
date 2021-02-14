@@ -24,3 +24,27 @@ argocd app create crw \
 # TODO deleting the argocd project and operator may hang, to fix
 oc patch checluster.org.eclipse.che codeready-workspaces -n crw --type='json' -p='[{"op": "replace", "path": "/metadata/finalizers", "value":[]}]'
 ```
+
+`tekton`
+```
+argocd repo add https://github.com/refactored-adventure/argocd.git
+argocd app create tekton \
+  --repo https://github.com/refactored-adventure/argocd.git \
+  --path tekton/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```
+
+`cert-utils`
+```
+argocd repo add https://github.com/refactored-adventure/argocd.git
+argocd app create cert-utils \
+  --repo https://github.com/refactored-adventure/argocd.git \
+  --path cert-utils/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```
