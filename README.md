@@ -12,9 +12,9 @@ You can deploy the applications using argocd cli directly but more commonly they
 
 `crw`
 ```
-argocd repo add https://github.com/refactored-adventure/argocd.git
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
 argocd app create crw \
-  --repo https://github.com/refactored-adventure/argocd.git \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
   --path crw/base \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace crw \
@@ -27,9 +27,9 @@ oc patch checluster.org.eclipse.che codeready-workspaces -n crw --type='json' -p
 
 `tekton`
 ```
-argocd repo add https://github.com/refactored-adventure/argocd.git
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
 argocd app create tekton \
-  --repo https://github.com/refactored-adventure/argocd.git \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
   --path tekton/base \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace openshift-operators \
@@ -39,12 +39,24 @@ argocd app create tekton \
 
 `cert-utils`
 ```
-argocd repo add https://github.com/refactored-adventure/argocd.git
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
 argocd app create cert-utils \
-  --repo https://github.com/refactored-adventure/argocd.git \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
   --path cert-utils/base \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```
+
+`knative`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create knative\
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path knative/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-serverless \
   --revision master \
   --sync-policy automated
 ```
