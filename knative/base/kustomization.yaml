@@ -4,3 +4,4 @@ resources:
 - namespace.yaml
 - create-knative.yaml
 - operatorgroup.yaml
+- serving.yaml
