@@ -4,6 +4,7 @@ kind: OperatorGroup
 metadata:
   annotations:
     olm.providedAPIs: ""
+  name: openshift-serverless-skwoe
   generateName: openshift-serverless-
   namespace: openshift-serverless
 spec: {}
