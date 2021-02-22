@@ -3,3 +3,4 @@ namespace: openshift-serverless
 resources:
 - namespace.yaml
 - create-knative.yaml
+- operatorgroup.yaml
