@@ -52,11 +52,23 @@ argocd app create cert-utils \
 `knative`
 ```
 argocd repo add https://github.com/rht-labs/refactored-adventure.git
-argocd app create knative\
+argocd app create knative \
   --repo https://github.com/rht-labs/refactored-adventure.git \
   --path knative/base \
   --dest-server https://kubernetes.default.svc \
   --dest-namespace openshift-serverless \
+  --revision master \
+  --sync-policy automated
+```
+
+`container-security-operator`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create container-security-operator \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path container-security-operator/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
   --revision master \
   --sync-policy automated
 ```
