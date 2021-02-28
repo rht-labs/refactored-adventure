@@ -1,0 +1,4 @@
+namespace: openshift-monitoring
+
+resources:
+- configmap.yaml
