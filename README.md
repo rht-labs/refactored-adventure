@@ -72,3 +72,15 @@ argocd app create container-security-operator \
   --revision master \
   --sync-policy automated
 ```
+
+`user-workload-monitoring`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create user-workload-monitoring \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path user-workload-monitoring/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-monitoring \
+  --revision master \
+  --sync-policy automated
+```
