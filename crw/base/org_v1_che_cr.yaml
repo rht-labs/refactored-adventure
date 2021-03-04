@@ -17,7 +17,8 @@ metadata:
   namespace: openshift-workspaces
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
-    argocd.argoproj.io/sync-options: Prune=false  
+    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   server:
     # server image used in Che deployment
