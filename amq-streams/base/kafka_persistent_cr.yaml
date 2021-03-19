@@ -5,6 +5,7 @@ metadata:
   namespace: strimzi
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   kafka:
     version: 2.4.0

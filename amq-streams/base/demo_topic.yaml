@@ -6,6 +6,7 @@ metadata:
     strimzi.io/cluster: my-cluster
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   namespace: strimzi
 spec:
   partitions: 40
