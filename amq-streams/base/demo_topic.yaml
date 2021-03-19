@@ -1,0 +1,15 @@
+apiVersion: kafka.strimzi.io/v1beta1
+kind: KafkaTopic
+metadata:
+  name: demo
+  labels:
+    strimzi.io/cluster: my-cluster
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  namespace: strimzi
+spec:
+  partitions: 40
+  replicas: 3
+  config:
+    retention.ms: '604800000'
+    segment.bytes: '1073741824'
