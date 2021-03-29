@@ -1,0 +1,11 @@
+apiVersion: project.openshift.io/v1
+kind: Project
+metadata:
+  annotations:
+    openshift.io/description: "strimzi"
+    openshift.io/display-name: "strimzi"
+    argocd.argoproj.io/sync-wave: "-1"
+  name: strimzi
+spec:
+  finalizers:
+  - kubernetes

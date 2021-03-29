@@ -84,3 +84,27 @@ argocd app create user-workload-monitoring \
   --revision master \
   --sync-policy automated
 ```
+
+`amq-streams`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create amq-streams \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path amq-streams/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace strimzi \
+  --revision master \
+  --sync-policy automated
+```
+
+`istio`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create istio \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path istio/istio-system \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```

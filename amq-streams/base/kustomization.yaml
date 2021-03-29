@@ -1,0 +1,8 @@
+namespace: strimzi
+
+resources:
+- project.yaml
+- operator-group.yaml
+- subscription.yaml
+- demo_topic.yaml
+- kafka_persistent_cr.yaml
