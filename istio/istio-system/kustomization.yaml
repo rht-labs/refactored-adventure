@@ -1,0 +1,10 @@
+namespace: openshift-operators
+
+bases:
+- ../base
+
+namespace: istio-system
+
+resources:
+- namespace.yaml
+- service-mesh-control-plane.yaml
