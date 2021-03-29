@@ -96,3 +96,15 @@ argocd app create amq-streams \
   --revision master \
   --sync-policy automated
 ```
+
+`istio`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create istio \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path istio/istio-system \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```
