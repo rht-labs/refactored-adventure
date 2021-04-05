@@ -4,6 +4,9 @@ kind: ServiceMeshControlPlane
 metadata:
   namespace: istio-system
   name: basic-mesh
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
   tracing:
     sampling: 100
