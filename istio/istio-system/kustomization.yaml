@@ -8,3 +8,4 @@ namespace: istio-system
 resources:
 - namespace.yaml
 - service-mesh-control-plane.yaml
+- operatorgroup.yaml
