@@ -108,3 +108,15 @@ argocd app create istio \
   --revision master \
   --sync-policy automated
 ```
+
+`elastic`
+```
+argocd repo add https://github.com/rht-labs/refactored-adventure.git
+argocd app create elastic \
+  --repo https://github.com/rht-labs/refactored-adventure.git \
+  --path elastic/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace openshift-operators \
+  --revision master \
+  --sync-policy automated
+```
