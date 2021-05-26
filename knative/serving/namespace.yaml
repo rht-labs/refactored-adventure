@@ -6,7 +6,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "-1"
   labels:
     openshift.io/cluster-monitoring: "true"
-  name: openshift-serverless
+  name: knative-serving
 spec:
   finalizers:
   - kubernetes
