@@ -3,4 +3,4 @@ bases:
 
 resources:
 - namespace.yaml
-- service-mesh-control-plane.yaml
+# - service-mesh-control-plane.yaml
