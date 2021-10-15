@@ -2,6 +2,8 @@
 apiVersion: microcks.github.io/v1alpha1
 kind: MicrocksInstall
 metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
   name: my-microcksinstall
   namespace: microcks
 spec:
