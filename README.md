@@ -120,3 +120,15 @@ argocd app create elastic \
   --revision master \
   --sync-policy automated
 ```
+
+`microcks`
+```
+argocd repo add https://github.com/fmenesesg/refactored-adventure.git
+argocd app create microcks \
+  --repo https://github.com/fmenesesg/refactored-adventure.git \
+  --path microcks/base \
+  --dest-server https://kubernetes.default.svc \
+  --dest-namespace microcks \
+  --revision master \
+  --sync-policy automated
+```
