@@ -1,0 +1,6 @@
+namespace: microcks
+
+resources:
+- namespace.yaml
+- subscription.yaml
+- operatorgroup.yaml

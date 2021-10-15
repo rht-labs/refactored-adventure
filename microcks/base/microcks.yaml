@@ -1,0 +1,26 @@
+---
+apiVersion: microcks.github.io/v1alpha1
+kind: MicrocksInstall
+metadata:
+  name: my-microcksinstall
+  namespace: microcks
+spec:
+  name: my-microcksinstall
+  version: 1.4.1
+  microcks:
+    replicas: 1
+  postman:
+    replicas: 1
+  keycloak:
+    install: true
+    persistent: true
+    volumeSize: 1Gi
+  mongodb:
+    install: true
+    persistent: true
+    volumeSize: 2Gi
+  features:
+    async:
+      enabled: true
+    kafka:
+      install: true
