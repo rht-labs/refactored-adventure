@@ -1,0 +1,11 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  annotations:
+    olm.providedAPIs: MicrocksInstall.v1alpha1.microcks.github.io
+    argocd.argoproj.io/sync-wave: "2"
+  name: microcks
+  namespace: microcks
+spec:
+  targetNamespaces:
+  - microcks
