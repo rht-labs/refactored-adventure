@@ -15,7 +15,7 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   annotations:
-    olm.providedAPIs: CheCluster.v1.org.eclipse.che
+    olm.providedAPIs: CheBackupServerConfiguration.v1.org.eclipse.che,CheCluster.v1.org.eclipse.che,CheClusterBackup.v1.org.eclipse.che,CheClusterRestore.v1.org.eclipse.che
     argocd.argoproj.io/sync-wave: "2"
   name: openshift-workspaces-sbrfb
   generateName: openshift-workspaces-
