@@ -5,7 +5,7 @@ metadata:
   annotations:
     openshift.io/description: "CRW"
     openshift.io/display-name: "CRW"
-    argocd.argoproj.io/sync-wave: "0"
+    argocd.argoproj.io/sync-wave: "-1"
   name: openshift-workspaces
 spec:
   finalizers:
@@ -16,7 +16,8 @@ kind: OperatorGroup
 metadata:
   annotations:
     olm.providedAPIs: CheBackupServerConfiguration.v1.org.eclipse.che,CheCluster.v1.org.eclipse.che,CheClusterBackup.v1.org.eclipse.che,CheClusterRestore.v1.org.eclipse.che
-    argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   name: openshift-workspaces-sbrfb
   generateName: openshift-workspaces-
   namespace: openshift-workspaces
