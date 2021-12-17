@@ -1,15 +1,14 @@
 ---
-apiVersion: project.openshift.io/v1
-kind: Project
+apiVersion: v1
+kind: Namespace
 metadata:
   annotations:
     openshift.io/description: "CRW"
     openshift.io/display-name: "CRW"
     argocd.argoproj.io/sync-wave: "-1"
+  labels:
+    openshift.io/cluster-monitoring: "true"
   name: openshift-workspaces
-spec:
-  finalizers:
-  - kubernetes
 ---
 apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
